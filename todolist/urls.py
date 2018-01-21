@@ -6,7 +6,7 @@ from todolist import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls), # administration
     # url(r'^$', views.index, name='index'),
-    url(r'^$', views.todo_list), # main page
-    # url(r'^delete/(?P<pk>\d+)/', views.delete), # delete a todo-item
-    # url(r'^complete/(?P<pk>\d+)/', views.complete), # complete a todo-item
+    url(r'^$', todo_list), # main page
+    url(r'^delete/(?P<pk>\d+)/', views.delete), # delete a todo-item
+    url(r'^complete/(?P<pk>\d+)/', views.complete), # complete a todo-item
 ]
