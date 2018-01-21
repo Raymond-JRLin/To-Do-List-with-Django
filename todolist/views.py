@@ -7,9 +7,9 @@ class Todo:
         self.isCompleted = isCompleted
 
 
-def todo_list(request):
+def todolist(request):
     list = []
-    
+
     for value in range(0, 10):
         list.append(Todo("item" + str(value), False))
 
