@@ -31,7 +31,7 @@ def complete(request, pk):
 
 
 def delete(request, pk):
-    todo_item = get_object_or_404(Todo, id=pk)
+    todo = get_object_or_404(Todo, id=pk)
     todo.delete()
     return HttpResponseRedirect('/')
 
