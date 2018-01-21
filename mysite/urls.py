@@ -10,4 +10,5 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', get_time)
+    url(r'', include('todolist.urls'))
 ]
