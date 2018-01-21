@@ -1,0 +1,28 @@
+{% block contain%}
+  <div>
+    <h1>TodoList</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Completed</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for todo in list %}
+          <tr>
+            <td>{{todo.description}}</td>
+
+            <td>
+              {% if todo.isCompleted %}
+                <del>Completed!</del>
+              {% else %}
+                <p>incompleted</p>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
