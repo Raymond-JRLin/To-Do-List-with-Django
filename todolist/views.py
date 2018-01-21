@@ -10,7 +10,15 @@ from models import Todo
 
 
 def todo_list(request):
-    list = Todo.objects.all()
+    # because we use the same form/page to show and add, we need to determine which request we got
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        if action == 'add':
+            title = request.POST.get('title')
+            # create a new todo
+            Todo.objects.create(title=title)
+
+    list = Todo.objects.all() # get the todolists in database including what we added above
 
     return render(request, 'todolist.html', locals())
 
