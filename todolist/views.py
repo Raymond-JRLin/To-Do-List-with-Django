@@ -7,7 +7,7 @@ class Todo:
         self.isCompleted = isCompleted
 
 
-def todolist(request):
+def todo_list(request):
     list = []
 
     for value in range(0, 10):
