@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from models import Todo
 
 ### testing without database
@@ -23,7 +23,17 @@ def todo_list(request):
     return render(request, 'todolist.html', locals())
 
 
+def complete(request, pk):
+    todo_item = get_object_or_404(Todo, id=pk)
+    todo_item.completed = True
+    todo_item.save()
+    return HttpResponseRedirect('/')
 
+
+def delete(request, pk):
+    todo_item = get_object_or_404(Todo, id=pk)
+    todo.delete()
+    return HttpResponseRedirect('/')
 
 
 
