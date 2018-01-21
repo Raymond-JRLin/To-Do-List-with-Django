@@ -28,7 +28,7 @@
               {% endif %}
             </td>
             <td>
-              <form class="/delete/{{todo.id}}">
+              <form action="/delete/{{todo.id}}/">
                 <button class="btn btn-primary" type="submit">Delete it</button>
               </form>
             </td>
@@ -40,7 +40,7 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add">Add a event</button>
     <!-- Modal -->
     <div class="modal fade" id="modal-add">
-      <form method="post">
+      <form method="post" id="add-event-form">
         {% csrf_token %}
         <div class="modal-dialog">
           <div class="modal-content">
@@ -61,11 +61,11 @@
             <input type="hidden" name="action" value="add"/>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
 
   </div>
