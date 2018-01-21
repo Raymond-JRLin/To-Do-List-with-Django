@@ -4,5 +4,5 @@ from django.http import HttpResponse
 import datetime
 
 def index(request):
-    message = 'current time is: {}'.formate(datetime.datetime.now())
+    message = 'current time is: {}'.format(datetime.datetime.now())
     return HttpResponse(message)
