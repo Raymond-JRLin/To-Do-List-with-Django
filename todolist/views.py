@@ -1,17 +1,16 @@
 from django.shortcuts import render
+from models import Todo
 
-
-class Todo:
-    def __init__(self, description, isCompleted):
-        self.description = description
-        self.isCompleted = isCompleted
+### testing without database
+# class Todo:
+#     def __init__(self, description, isCompleted):
+#         self.description = description
+#         self.isCompleted = isCompleted
+###
 
 
 def todo_list(request):
-    list = []
-
-    for value in range(0, 10):
-        list.append(Todo("item" + str(value), False))
+    list = Todo.objects.all()
 
     return render(request, 'todolist.html', locals())
 
