@@ -20,8 +20,17 @@
               {% if todo.completed %}
                 <del>Completed!</del>
               {% else %}
-                <p>incompleted</p>
+                <!-- <p>incompleted</p> -->
+                <!-- added an input form other than show words directly -->
+                <form action="/complete/{{todo.id}}/">
+                  <button class="btn btn-primary" type="submit">Mark it completed!</button>
+                </form>
               {% endif %}
+            </td>
+            <td>
+              <form class="/delete/{{todo.id}}">
+                <button class="btn btn-primary" type="submit">Delete it</button>
+              </form>
             </td>
           </tr>
         {% endfor %}
